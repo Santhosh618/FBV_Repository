@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DataBase list</title>
+  </head>
+  <body>
+    <h1>Here List Come From database :</h1><hr>
+    {% if list %}
+    <table border="2px">
+      <thead>
+        <th>Sr.No</th>
+        <th>Name</th>
+        <th>ID</th>
+        <th>Position</th>
+        <th>Address</th>
+        <th>Status</th>
+      </thead>
+  {% for x in list %}
+  <tr>
+    <td>{{x.id}}</td>
+    <td>{{x.Ename}}</td>
+    <td>{{x.Eid}}</td>
+    <td>{{x.Epostion}}</td>
+    <td>{{x.Eaddress}}</td>
+    <td><a href="/update/{{x.id}}"><button type="button" name="button">Update</button></a></td>
+    <td><a href="/delete/{{x.id}}"><button type="button" name="button">Delete</button></a></td>
+    {% endfor %}
+
+  </tr>
+{% else %}
+  <h1>NO data Found </h1>
+  </table>
+    {% endif %}
+  <p><a href="/create"><button type="button" name="button">Inser Record</button></a> <br></p>
+
+
+  </body>
+</html>

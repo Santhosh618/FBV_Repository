@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Update Page</title>
+  </head>
+  <body>
+    <h2>Please Upadate Your Details Here : </h2><hr>
+    <form  method="post">
+      Enter name:<input type="text" name="Ename" value="{{record.Ename}}"><br>
+      Enter id:<input type="text" name="Eid" value="{{record.Eid}}"><br>
+      Enter Position<input type="text" name="Epostion" value="{{record.Epostion}}"><br>
+      Enter Address<input type="text" name="Eaddress" value="{{record.Eaddress}}">
+      {% csrf_token %}
+      <input type="submit" name="" value="Update">
+    </form>
+
+  </body>
+</html>
